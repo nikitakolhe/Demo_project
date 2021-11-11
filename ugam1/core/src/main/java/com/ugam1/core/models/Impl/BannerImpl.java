@@ -1,7 +1,6 @@
 package com.ugam1.core.models.Impl;
 
 import com.ugam1.core.models.Banner;
-
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -12,30 +11,45 @@ import javax.inject.Inject;
         adapters = Banner.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class BannerImpl implements Banner{
-    @Inject
-    String heading;
+public class BannerImpl implements Banner {
     @Inject
     String title;
+    @Inject
+    String heading;
     @Inject
     String text;
     @Inject
     String button;
     @Inject
     String image;
+    @Inject
+    String path;
 
     @Override
-    public String getBannerHeading() { return heading; }
+    public String getTitle() {
+        return title;
+    }
+
     @Override
-    public String getBannerTitle() { return title; }
+    public String getHeading() {
+        return heading;
+    }
+
     @Override
-    public String getBannerText() { return text; }
+    public String getText() {
+        return text;
+    }
+
     @Override
-    public String getBannerButton() { return button; }
+    public String getButton() {
+        return button;
+    }
 
     @Override
     public String getImage() {
         return image;
     }
+    @Override
+    public String getBannerAreaPathField() { return path; }
 
 }

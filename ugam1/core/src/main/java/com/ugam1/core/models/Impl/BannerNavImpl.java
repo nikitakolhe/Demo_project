@@ -1,28 +1,33 @@
 package com.ugam1.core.models.Impl;
 
-import com.ugam1.core.models.facts;
+import com.ugam1.core.models.BannerNav;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
 import javax.inject.Inject;
+
 @Model(adaptables = Resource.class,
-        adapters = facts.class,
+        adapters = BannerNav.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-
-public class factsImpl implements facts {
+public class BannerNavImpl implements BannerNav {
     @Inject
     String title;
     @Inject
-    String text;
+    String nav1;
+    @Inject
+    String nav2;
     @Override
     public String getTitle() {
         return title;
     }
-
     @Override
-    public String getText() {
-        return text;
+    public String getNav1() {
+        return nav1;
+    }
+    @Override
+    public String getNav2() {
+        return nav2;
     }
 }

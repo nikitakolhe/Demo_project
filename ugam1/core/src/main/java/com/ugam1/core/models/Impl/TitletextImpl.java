@@ -1,29 +1,27 @@
 package com.ugam1.core.models.Impl;
 
-import com.ugam1.core.models.blogteaser;
+import com.ugam1.core.models.Titletext;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
 import javax.inject.Inject;
+
 @Model(adaptables = Resource.class,
-        adapters = blogteaser.class,
+        adapters = Titletext.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-
-public class blogteaserImpl implements blogteaser {
-    @Inject
-    String image;
+public class TitletextImpl implements Titletext {
     @Inject
     String title;
     @Inject
     String text;
-
-    @Override
-    public String getImage() {
-        return image;
-    }
-
+    @Inject
+    Boolean paddingbottom;
+    @Inject
+    Boolean sectiongap;
+    @Inject
+    Boolean color;
     @Override
     public String getTitle() {
         return title;
@@ -33,4 +31,20 @@ public class blogteaserImpl implements blogteaser {
     public String getText() {
         return text;
     }
+
+    @Override
+    public Boolean getPaddingBottom() {
+        return paddingbottom;
+    }
+
+    @Override
+    public Boolean getSectionGap() {
+        return sectiongap;
+    }
+
+    @Override
+    public Boolean getColor(){
+        return color;
+    }
+
 }

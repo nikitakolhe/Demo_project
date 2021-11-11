@@ -1,26 +1,29 @@
 package com.ugam1.core.models.Impl;
-import com.ugam1.core.models.portfolioarea;
+
+import com.ugam1.core.models.Portfolio;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
 import javax.inject.Inject;
+
 @Model(adaptables = Resource.class,
-        adapters = portfolioarea.class,
+        adapters = Portfolio.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-
-public class portfolioareaImpl implements portfolioarea{
+public class PortfolioImpl implements Portfolio {
     @Inject
-    String image;
+    String imagePath;
     @Inject
     String title;
     @Inject
     String text;
+    @Inject
+    String preview;
 
     @Override
-    public String getImage() {
-        return image;
+    public String getImagePath() {
+        return imagePath;
     }
 
     @Override
@@ -31,5 +34,10 @@ public class portfolioareaImpl implements portfolioarea{
     @Override
     public String getText() {
         return text;
+    }
+
+    @Override
+    public String getPreview() {
+        return preview;
     }
 }

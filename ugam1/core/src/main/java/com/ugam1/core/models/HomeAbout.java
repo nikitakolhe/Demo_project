@@ -1,10 +1,10 @@
 package com.ugam1.core.models;
 
-public interface Banner {
-    String getTitle();
+public interface HomeAbout {
     String getHeading();
+    String getTitle();
     String getText();
     String getButton();
     String getImage();
-    String getBannerAreaPathField();
+    String getHomeAreaPathField();
 }
