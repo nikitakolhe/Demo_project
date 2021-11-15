@@ -1,0 +1,17 @@
+{
+
+ "banner": {
+  "jcr:primaryType": "nt:unstructured",
+  "jcr:createdBy": "admin",
+  "button": "discover now",
+  "jcr:lastModifiedBy": "admin",
+  "jcr:created": "Mon Nov 15 2021 20:51:21 GMT+0530",
+  "path": "/content/ugam1/us/en/home",
+  "text": "You will begin to realise why this exercise is called the Dickens Pattern with reference to the ghost showing Scrooge some different futures.",
+  "image": "/content/dam/ugam1/hero-img.png",
+  "title": "This is me",
+  "heading": "Philip Gilbert",
+  "jcr:lastModified": "Mon Nov 15 2021 20:58:37 GMT+0530",
+  "sling:resourceType": "ugam1/components/content/banner"
+}
+}
