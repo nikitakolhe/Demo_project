@@ -1,0 +1,10 @@
+{
+  "addition":{
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:createdBy": "admin",
+    "jcr:lastModifiedBy": "admin",
+    "jcr:created": "Tue Nov 16 2021 16:33:17 GMT+0530",
+    "jcr:lastModified": "Tue Nov 16 2021 16:33:17 GMT+0530",
+    "sling:resourceType": "ugam1/components/content/registrations"
+  }
+}
