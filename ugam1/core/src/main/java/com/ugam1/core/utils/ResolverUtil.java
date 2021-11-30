@@ -18,6 +18,7 @@ public class ResolverUtil {
         paramMap.put(ResourceResolverFactory.SUBSERVICE, UGAM1_SERVICE_USER);
         ResourceResolver resolver = resourceResolverFactory.getServiceResourceResolver(paramMap);
         return resolver;
+        
     }
 
 

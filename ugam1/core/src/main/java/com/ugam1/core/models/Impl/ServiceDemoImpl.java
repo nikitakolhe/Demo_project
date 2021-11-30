@@ -1,6 +1,4 @@
 package com.ugam1.core.models.Impl;
-
-
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
@@ -8,6 +6,7 @@ import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
 import com.ugam1.core.models.ServiceDemo;
 import com.ugam1.core.services.DemoService;
+import com.ugam1.core.utils.ResolverUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
@@ -16,11 +15,11 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.security.auth.login.LoginException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,9 +29,6 @@ import java.util.Map;
         adapters = ServiceDemo.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ServiceDemoImpl implements ServiceDemo {
-
-    @OSGiService
-    DemoService demoService;
     @Inject
     private ResourceResolverFactory resourceResolverFactory;
     final Logger LOG = LoggerFactory.getLogger(ServiceDemoImpl.class);
@@ -40,7 +36,7 @@ public class ServiceDemoImpl implements ServiceDemo {
     ResourceResolver resolver;
     @Inject
     QueryBuilder queryBuilder;
-    String user = "";
+    String user = " ";
     @PostConstruct
     protected void init(){
         LOG.info("\n printing Model logs");
@@ -59,17 +55,21 @@ public class ServiceDemoImpl implements ServiceDemo {
         userMap.put("p.properties", "rep:principalName");
         try{
             LOG.info("\n Inside Try..");
-
-            Session session = resolver.adaptTo(Session.class);
+            ResourceResolver serviceResourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
+            // LOG.info("\n resolver hit "+serviceResourceResolver.getUserID());
+            Session session = serviceResourceResolver.adaptTo(Session.class);
             Query userQuery = queryBuilder.createQuery(PredicateGroup.create(userMap), session);
             SearchResult result = userQuery.getResult();
             List<Hit> Hits = result.getHits();
             for (Hit hit : Hits) {
+
                 user = user + "\r\n" + hit.getProperties().get("rep:principalName", String.class);
             }
-        } catch (RepositoryException e) {
+        } catch (RepositoryException | LoginException | org.apache.sling.api.resource.LoginException e) {
             LOG.info("Service User ERROR",e.getMessage());
         }
+
+
         return user;
     }
 
