@@ -1,0 +1,7 @@
+<sly data-sly-use.osgiconfig="com.ugam1.core.models.OSGiConfigDemo"></sly>
+<div><p> Service Name : <b>${osgiconfig.serviceName}</b></p></div>
+<div><p> Service Count : <b>${osgiconfig.serviceCount}</b></p></div>
+<div>Countries</div>
+<ul data-sly-list="${osgiconfig.countries}">
+	<li>${item}</li>
+</ul>
