@@ -4,30 +4,37 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import com.ugam1.core.models.Timeline;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-import org.apache.sling.models.annotations.Exporter;
-import org.apache.sling.models.annotations.ExporterOption;
-import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.*;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Model(
-        adaptables = SlingHttpServletRequest.class,
+        adaptables = Resource.class,
         adapters = Timeline.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
         resourceType = TimelineImpl.RESOURCE_TYPE
 )
-@Exporter(name = "jackson", extensions = "json",
-        options = {
-                @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true"),
-        })
+@Exporters({
+        @Exporter(name = "jackson", extensions = "json",
+                options = {
+                        @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value = "true"),
+                }),
+        @Exporter(name = "xml", extensions = "xml",selector = "testimonial",
+                options = {
+                        @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true"),
+                })
+
+
+})
 @JsonRootName("timeline")
+@XmlRootElement(name = "xml-exporter")
 public class TimelineImpl implements Timeline {
 
     final protected static String RESOURCE_TYPE="ugam1/components/content/timeline";
