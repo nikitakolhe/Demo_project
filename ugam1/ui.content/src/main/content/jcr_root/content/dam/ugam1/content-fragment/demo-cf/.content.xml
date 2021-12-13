@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="d0a35de5-30dc-4943-ae97-9dd99912f6c7">
+    <jcr:content
+        cq:name="demo-cf"
+        cq:parentPath="/content/dam/ugam1/content-fragment"
+        jcr:description=""
+        jcr:lastModified="{Date}2021-12-13T16:10:58.031+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Demo CF"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-12-13T16:10:58.032+05:30">
+        <data
+            cq:model="/conf/ugam1/settings/dam/cfm/models/ugam1model"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                details="&lt;p>Here, I focus on a range of items and features that we use in life without giving them a second thought. such as Coca Cola. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.&lt;/p>&#xa;"
+                details_x0040_ContentType="text/html"
+                details_x0040_LastModified="{Date}2021-12-13T16:10:57.772+05:30"
+                isauthor="{Boolean}true"
+                isauthor_x0040_LastModified="{Date}2021-12-13T16:10:57.774+05:30"
+                name="Phil"
+                name_x0040_LastModified="{Date}2021-12-13T16:10:57.772+05:30"
+                projects="2D Vinyl Design"
+                projects_x0040_LastModified="{Date}2021-12-13T16:10:57.775+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
