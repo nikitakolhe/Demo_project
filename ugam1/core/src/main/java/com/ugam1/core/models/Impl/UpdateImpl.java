@@ -27,8 +27,8 @@ public class UpdateImpl implements Update {
         try{
             ResourceResolver serviceResourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
             Session session = serviceResourceResolver.adaptTo(Session.class);
-            String path = "/content/ugam1/us/en/home/jcr:content";
-            Resource resource = serviceResourceResolver.getResource("/content/ugam1/us/en/home/jcr:content");
+            String path = "/content/ugam1/us/en/schedulers/jcr:content/root/container/scheduler";
+            Resource resource = serviceResourceResolver.getResource("/content/ugam1/us/en/schedulers/jcr:content/root/container/scheduler");
             Node node = resource.adaptTo(Node.class);
             node.setProperty("Time" , DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())));
             session.save();
