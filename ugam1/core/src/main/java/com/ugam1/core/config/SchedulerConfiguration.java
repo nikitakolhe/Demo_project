@@ -13,6 +13,6 @@ public @interface SchedulerConfiguration {
     public String schedulerName() default "Custom Sling Scheduler Configuration";
 
     @AttributeDefinition(name = "My Cron Expression", description = "My Cron Expression", type = AttributeType.STRING)
-    public String time() default "0/20 * * * * ?";
+    public String time() default "0 0 12 1/1 * ? *";
 
 }
