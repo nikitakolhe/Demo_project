@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 public class Ugam1Scheduler implements Runnable{
     private static final Logger LOG = LoggerFactory.getLogger(Ugam1Scheduler.class);
     private int schedulerId;
+    String path1="/content/ugam1/us/en/schedulers/jcr:content/root/container/scheduler";
     @Reference
     private Scheduler scheduler;
     @Reference
@@ -47,6 +48,6 @@ public class Ugam1Scheduler implements Runnable{
     @Override
     public void run() {
         LOG.info("\n ====> RUN METHOD  ");
-        update.update();
+        update.update(path1);
     }
 }

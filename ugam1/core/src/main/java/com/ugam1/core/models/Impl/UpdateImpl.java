@@ -2,6 +2,8 @@ package com.ugam1.core.models.Impl;
 
 
 import com.day.cq.commons.date.DateUtil;
+import com.day.cq.replication.ReplicationAction;
+import com.day.cq.replication.ReplicationOptions;
 import com.ugam1.core.models.Update;
 import com.ugam1.core.utils.ResolverUtil;
 
@@ -23,12 +25,12 @@ public class UpdateImpl implements Update {
 
 
     @Override
-    public void update(){
+    public void update(String path){
         try{
             ResourceResolver serviceResourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
             Session session = serviceResourceResolver.adaptTo(Session.class);
-            String path = "/content/ugam1/us/en/schedulers/jcr:content/root/container/scheduler";
-            Resource resource = serviceResourceResolver.getResource("/content/ugam1/us/en/schedulers/jcr:content/root/container/scheduler");
+           // String path = "/content/ugam1/us/en/schedulers/jcr:content/root/container/scheduler";
+            Resource resource = serviceResourceResolver.getResource(path);
             Node node = resource.adaptTo(Node.class);
             node.setProperty("Time" , DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())));
             session.save();

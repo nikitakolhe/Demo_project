@@ -29,6 +29,7 @@ public class ReplicationProcessor implements Preprocessor {
     private ResourceResolverFactory resourceResolverFactory;
     @Reference
     Update update;
+    String path1="/content/ugam1/us/en/schedulers/jcr:content/root/container/scheduler";
     @Reference
     private Replicator replicator;
     @Override
@@ -54,9 +55,8 @@ public class ReplicationProcessor implements Preprocessor {
                     log.debug("===============inside if==============");
                 }else {
                     log.debug("===============inside else====================");
-                    update.update();
-                    session.save();
-                    session.logout();
+                    update.update(path1);
+
                 }
                     session.save();
                     session.logout();
