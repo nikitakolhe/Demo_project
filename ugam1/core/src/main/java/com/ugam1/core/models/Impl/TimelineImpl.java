@@ -56,10 +56,7 @@ public class TimelineImpl implements Timeline {
                 timeLineMap.add(timelinearea);
             }
         }
-        // }catch (Exception e){
-        //LOG.info("\n ERROR while getting Fact Area Details {} ",e.getMessage());
-        //}
-        // LOG.info("\n SIZE {} ",factAreaMap.size());
+
         return timeLineMap;
     }
 }

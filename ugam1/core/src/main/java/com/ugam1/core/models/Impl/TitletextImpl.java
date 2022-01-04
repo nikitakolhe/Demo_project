@@ -20,8 +20,7 @@ public class TitletextImpl implements Titletext {
     Boolean paddingbottom;
     @Inject
     Boolean sectiongap;
-    @Inject
-    Boolean color;
+
     @Override
     public String getTitle() {
         return title;
@@ -42,9 +41,6 @@ public class TitletextImpl implements Titletext {
         return sectiongap;
     }
 
-    @Override
-    public Boolean getColor(){
-        return color;
-    }
+
 
 }

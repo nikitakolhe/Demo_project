@@ -41,10 +41,10 @@ public class ReplicationProcessor implements Preprocessor {
         }
         String path = replicationAction.getPath();
         if(path.equals("/content/ugam1/us/en/schedulers")){
-            log.debug("path equal");
+            //log.debug("path equal");
             ResourceResolver serviceResourceResolver = null;
             try {
-                log.debug("===============inside try====================");
+                //log.debug("===============inside try====================");
                 serviceResourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
                 Session session = serviceResourceResolver.adaptTo(Session.class);
                 Resource resource = serviceResourceResolver.getResource("/content/ugam1/us/en/schedulers/jcr:content/root/container/scheduler");
@@ -52,26 +52,26 @@ public class ReplicationProcessor implements Preprocessor {
 
                 if(node.getProperty("Time") == DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())))
                 {
-                    log.debug("===============inside if==============");
+                    //log.debug("===============inside if==============");
                 }else {
-                    log.debug("===============inside else====================");
+                   // log.debug("===============inside else====================");
                     update.update(path1);
 
                 }
                     session.save();
                     session.logout();
 
-            } catch (LoginException | RepositoryException | InvalidDateException | org.apache.sling.api.resource.LoginException e) {
+            } catch (RepositoryException | InvalidDateException | org.apache.sling.api.resource.LoginException e) {
                 e.printStackTrace();
             }
 
         }
-        try {
-            log.debug(path);
+      /*  try {
+           // log.debug(path);
         }
         catch (Exception e) {
-            log.debug(e.getMessage());
-        }
+            //log.debug(e.getMessage());
+        }*/
     }
 
 }

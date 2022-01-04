@@ -1,0 +1,20 @@
+{ "brand":
+{
+  "primaryType": "nt:unstructured",
+  "createdBy": "admin",
+  "lastModifiedBy": "admin",
+  "created": "Fri Jun 18 2021 10:29:23 GMT+0530",
+  "lastModified": "Fri Jun 18 2021 15:39:11 GMT+0530",
+  "resourceType": "ugam1/components/content/brand",
+  "imgPath": [
+    "/content/dam/ugam1/l1.png",
+    "/content/dam/ugam1/l2.png",
+    "/content/dam/ugam1/l3.png",
+    "/content/dam/ugam1/l4.png",
+    "/content/dam/ugam1/l5.png"
+  ]
+}
+,
+"empty":{
+}
+}

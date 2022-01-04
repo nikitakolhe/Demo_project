@@ -1,8 +1,8 @@
 package com.ugam1.core.models.Impl;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.*;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import com.ugam1.core.models.Testimonialmulti;
 import java.util.ArrayList;
@@ -13,6 +13,7 @@ import java.util.Map;
 @Model(adaptables = Resource.class,
         adapters = Testimonialmulti.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+
 )
 public class TestimonialmultiImpl implements Testimonialmulti{
     @ChildResource

@@ -21,25 +21,20 @@ import javax.annotation.PostConstruct;
 
 @Model(adaptables = SlingHttpServletRequest.class,
         adapters = Caconfig.class,
-        resourceType = {CaconfigImpl.RESOURCE_TYPE},
+        //resourceType = {CaconfigImpl.RESOURCE_TYPE},
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 
 
 public class CaconfigImpl implements Caconfig {
     private static final Logger LOG = LoggerFactory.getLogger(CaconfigImpl.class);
-    protected static final String RESOURCE_TYPE = "";
+  // protected static final String RESOURCE_TYPE = "";
 
 
     @SlingObject
     ResourceResolver resourceResolver;
-
     @ScriptVariable
     Page currentPage;
-
-    @OSGiService
-    ConfigurationResolver configurationResolver;
-
 
     private String siteCountry;
     private String siteLocale;
@@ -90,7 +85,5 @@ public class CaconfigImpl implements Caconfig {
 
 return null;
     }
-
-
 
 }
