@@ -56,10 +56,5 @@ class HomeImplTest {
         assertEquals("/content/dam/ugam1/about-img - Copy.png", homeAbout.getImage());
     }
 
-  /* @Test
-    void getHomeAreaPathField() {
-        Resource json = aemContext.currentResource("/content/home");
-        HomeAbout homeAbout = json.adaptTo(HomeAbout.class);
-        assertEquals("/content/ugam1/us/en/about", homeAbout.getHomeAreaPathField());
-    }*/
+
 }

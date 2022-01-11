@@ -1,6 +1,5 @@
 package com.ugam1.core.models.Impl;
 
-import com.ugam1.core.models.Price;
 import com.ugam1.core.models.Pricearea;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;

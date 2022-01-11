@@ -1,0 +1,16 @@
+{
+  "Footer":{
+    "primaryType": "nt:unstructured",
+    "createdBy": "admin",
+    "lastModifiedBy": "admin",
+    "title1": "About me",
+    "title2": "Newsletter",
+    "title3": "Follow Me",
+    "created": "Fri Jun 18 2021 00:33:55 GMT+0530",
+    "text1": "We have tested a number of registry fix and clean utilities and present our top 3 list on our site for your convenience",
+    "text2": "Stay updated with our latest trends",
+    "text3": "Let us be social",
+    "lastModified": "Fri Jun 18 2021 00:35:13 GMT+0530",
+    "resourceType": "ugam1/components/content/footer"
+  }
+}

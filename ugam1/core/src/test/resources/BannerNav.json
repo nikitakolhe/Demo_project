@@ -1,0 +1,14 @@
+{
+  "BannerNav": {
+    "primaryType": "nt:unstructured",
+    "createdBy": "admin",
+    "lastModifiedBy": "admin",
+    "created": "Fri Jun 18 2021 01:33:13 GMT+0530",
+    "nav1": "home",
+    "nav2": "about me",
+    "path": "/content/ugam1/us/en/home",
+    "title": "About Me",
+    "lastModified": "Fri Jun 18 2021 14:50:11 GMT+0530",
+    "resourceType": "ugam1/components/content/bannernavigation"
+  }
+}

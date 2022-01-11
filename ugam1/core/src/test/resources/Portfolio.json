@@ -1,0 +1,14 @@
+{
+  "Portfolio": {
+    "primaryType": "nt:unstructured",
+    "createdBy": "admin",
+    "lastModifiedBy": "admin",
+    "imagePath": "/content/dam/ugam1/p1.jpg",
+    "created": "Fri Jun 18 2021 10:21:46 GMT+0530",
+    "preview": "/content/dam/ugam1/preview.png",
+    "text": "vector",
+    "title": "2D Vinyl Design",
+    "lastModified": "Fri Jun 18 2021 10:22:26 GMT+0530",
+    "resourceType": "ugam1/components/content/portfolioarea"
+  }
+}

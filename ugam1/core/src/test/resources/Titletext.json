@@ -1,0 +1,14 @@
+{
+  "Titletext": {
+    "primaryType": "nt:unstructured",
+    "createdBy": "admin",
+    "lastModifiedBy": "admin",
+    "created": "Fri Jun 18 2021 10:18:07 GMT+0530",
+    "text": "At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected.",
+    "title": "My Offered Services",
+    "sectiongap": "true",
+    "lastModified": "Fri Jun 18 2021 15:53:48 GMT+0530",
+    "paddingbottom": "false",
+    "resourceType": "ugam1/components/content/titletext"
+  }
+}
