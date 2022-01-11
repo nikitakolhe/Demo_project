@@ -19,7 +19,6 @@ import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.api.wrappers.ValueMapDecorator;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.osgi.framework.Constants;
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,8 +84,6 @@ public class DynamicDataSourceServlet extends SlingSafeMethodsServlet {
         } catch (JSONException | IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }
 
