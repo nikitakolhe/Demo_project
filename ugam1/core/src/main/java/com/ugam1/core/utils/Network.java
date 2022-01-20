@@ -26,21 +26,21 @@ public  class Network {
 
             if (responseCode == HttpsURLConnection.HTTP_OK) {
 
-                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                BufferedReader line = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
                 String inputLine;
 
-                StringBuffer response = new StringBuffer();
+                StringBuffer sb = new StringBuffer();
 
-                while ((inputLine = in.readLine()) != null) {
+                while ((inputLine = line.readLine()) != null) {
 
-                    response.append(inputLine);
+                    sb.append(inputLine);
 
                 }
 
-                in.close();
+                line.close();
 
-                return response.toString();
+                return sb.toString();
 
             }
 

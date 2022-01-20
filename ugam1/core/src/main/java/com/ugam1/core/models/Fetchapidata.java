@@ -8,6 +8,6 @@ import java.util.Map;
 
 public interface Fetchapidata  {
     public List<Map<String,String>> getData() throws JSONException, IOException;
-    public String getUrl();
+    public String getmultiUrl();
 
 }

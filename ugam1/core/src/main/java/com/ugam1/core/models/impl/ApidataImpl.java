@@ -1,9 +1,12 @@
 package com.ugam1.core.models.impl;
 import com.ugam1.core.models.Apidata;
+import com.ugam1.core.models.Apiosgi;
+
 import com.ugam1.core.utils.Network;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,15 +28,17 @@ public class ApidataImpl implements Apidata{
     private String firstname;
     private String lastname;
     private String image;
+    @OSGiService
+    Apiosgi apiosgi;
     @Override
     public String getUrl() {
-        return "https://reqres.in/api/users/"+url;
+        return apiosgi.getUrl();
     }
 
     @Override
     public String getMessage() throws JSONException {
 
-        String response = Network.readJson("https://reqres.in/api/users/"+url);
+        String response = Network.readJson(getUrl());
         JSONObject jsonObject =  new JSONObject(response);
         Iterator x = jsonObject.keys();
         JSONArray jsonArray = new JSONArray();
@@ -59,7 +64,7 @@ public class ApidataImpl implements Apidata{
 
     @Override
     public String getImage() {
-        String path=image.replaceAll("https://reqres.in/img/faces/","/content/dam/ugam1/");
+        String path=image.replace("https://reqres.in/img/faces/","/content/dam/ugam1/");
         return path;
     }
 

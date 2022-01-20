@@ -1,7 +1,9 @@
 package com.ugam1.core.models.impl;
 
+import com.ugam1.core.models.Apiosgi;
 import com.ugam1.core.models.Fetchapidata;
 import com.ugam1.core.utils.Network;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,10 +27,12 @@ public class FetchapidataImpl implements Fetchapidata {
     final Logger log = LoggerFactory.getLogger(FetchapidataImpl.class);
     @Inject
     String pageNo;
+    @OSGiService
+    Apiosgi apiosgi;
     @Override
     public List<Map<String, String>> getData() throws JSONException, IOException {
 
-        String response = Network.readJson(getUrl());
+        String response = Network.readJson(getmultiUrl());
         JSONObject jsonObject =  new JSONObject(response);
         log.info(String.valueOf(jsonObject));
         JSONArray jsonArray1 = jsonObject.getJSONArray("data");
@@ -49,7 +53,7 @@ public class FetchapidataImpl implements Fetchapidata {
 
 
     @Override
-    public String getUrl() {
+    public String getmultiUrl() {
         return "https://reqres.in/api/users?page="+pageNo;
     }
 }
