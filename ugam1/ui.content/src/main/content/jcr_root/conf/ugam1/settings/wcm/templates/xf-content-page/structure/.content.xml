@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2021-06-21T22:33:59.312+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/ugam1/settings/wcm/templates/xf-content-page0"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="ugam1/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ugam1/components/container"
+            layout="responsiveGrid">
+            <responsivegrid
+                jcr:created="{Date}2021-06-21T22:32:11.498+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-06-21T22:32:11.498+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </responsivegrid>
+            <header
+                jcr:created="{Date}2021-06-21T22:32:58.862+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-06-21T22:32:58.862+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ugam1/components/content/header"/>
+            <footer
+                jcr:created="{Date}2021-06-21T22:33:10.606+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-06-21T22:33:59.309+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ugam1/components/content/footer"
+                text1="We have tested a number of registry fix and clean utilities and present our top 3 list on our site for your convenience"
+                text2="Stay updated with our latest trends"
+                text3="Let us be social"
+                title1="About me"
+                title2="Newsletter"
+                title3="Follow Me"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}768"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

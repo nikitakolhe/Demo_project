@@ -74,6 +74,8 @@ public class DropDownServlet extends SlingSafeMethodsServlet {
                 }
             }
         } catch (Exception e) {
+
+
         }
     }
 

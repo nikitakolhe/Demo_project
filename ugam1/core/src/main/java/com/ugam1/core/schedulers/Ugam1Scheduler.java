@@ -1,11 +1,8 @@
 package com.ugam1.core.schedulers;
 import com.ugam1.core.config.SchedulerConfiguration;
 import com.ugam1.core.models.Update;
-import org.apache.sling.api.resource.*;
 import org.apache.sling.commons.scheduler.ScheduleOptions;
 import org.apache.sling.commons.scheduler.Scheduler;
-import org.apache.sling.event.jobs.JobManager;
-import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.annotations.*;
 import org.osgi.service.metatype.annotations.Designate;
 import org.slf4j.Logger;

@@ -4,5 +4,9 @@
     jcr:primaryType="cq:Page">
     <xf/>
     <rep:policy/>
+    <initial/>
     <page/>
+    <custom/>
+    <custom_x0020_xf/>
+    <custom-page/>
 </jcr:root>
